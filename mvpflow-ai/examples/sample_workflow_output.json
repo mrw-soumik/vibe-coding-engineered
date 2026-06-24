@@ -1,0 +1,319 @@
+{
+  "requirements": {
+    "problem": "Restaurant owners spend too much time answering repeated customer questions across scattered channels.",
+    "target_user": "Small restaurant owners and managers who handle customer questions manually.",
+    "pain_points": [
+      "Repeated questions about opening hours, menu items, allergies, reservations, and delivery.",
+      "Customer communication is scattered across Instagram, phone calls, Google reviews, and Facebook.",
+      "Owners risk missing requests or giving outdated information.",
+      "Manual replies take time away from operations and customer service."
+    ],
+    "risks": [
+      "Allergy or dietary answers may be risky if menu information is incomplete.",
+      "Outdated menu, delivery, or reservation information could mislead customers.",
+      "Fully automated replies should not be enabled before owner review."
+    ],
+    "assumptions": [
+      "The founder has at least a few customer conversations or notes.",
+      "The first version should be reviewed by a human before customer-facing use.",
+      "The MVP should avoid complex integrations until the core workflow is validated."
+    ]
+  },
+  "mvp_plan": {
+    "recommended_mvp": "A human-reviewed AI FAQ assistant for restaurant owners.",
+    "in_scope": [
+      "Paste or upload restaurant information.",
+      "Generate editable FAQ answers from the restaurant information.",
+      "Answer sample customer questions in a test console.",
+      "Flag risky allergy, dietary, or missing-information questions for owner review.",
+      "Create evaluation test cases for common and risky questions."
+    ],
+    "out_of_scope": [
+      "Live Instagram, Facebook, POS, or delivery integrations.",
+      "Fully automated customer replies without owner approval.",
+      "Payments, reservations engine, or full CRM features.",
+      "Voice/phone agent automation."
+    ],
+    "success_criteria": [
+      "Owner can enter restaurant information and receive clear FAQ drafts.",
+      "Assistant handles common questions with useful answers.",
+      "Risky allergy or missing-information cases are flagged instead of guessed.",
+      "The workflow produces actionable Jira tickets and evaluation results."
+    ]
+  },
+  "architecture": {
+    "pattern": "Human-in-the-loop AI workflow MVP",
+    "components": [
+      {
+        "name": "Founder Notes Input",
+        "purpose": "Collect messy customer notes, discovery findings, or business context."
+      },
+      {
+        "name": "Requirement Extraction",
+        "purpose": "Identify problem, user, pain points, risks, and assumptions."
+      },
+      {
+        "name": "MVP Scope Engine",
+        "purpose": "Separate in-scope MVP work from later-stage product ideas."
+      },
+      {
+        "name": "Architecture Planner",
+        "purpose": "Create a simple technical structure before implementation."
+      },
+      {
+        "name": "Jira Ticket Generator",
+        "purpose": "Convert scope into user stories, acceptance criteria, and definitions of done."
+      },
+      {
+        "name": "Evaluation Layer",
+        "purpose": "Score content quality, domain fit, and system reliability."
+      },
+      {
+        "name": "Final Summary Generator",
+        "purpose": "Create a founder-ready delivery summary and next-step plan."
+      }
+    ],
+    "data_flow": [
+      "Founder/customer notes are submitted.",
+      "Requirements are extracted and reviewed.",
+      "MVP scope is defined with clear out-of-scope boundaries.",
+      "Architecture and Jira tickets are generated.",
+      "Outputs are evaluated using content, domain, and reliability metrics.",
+      "Final summary is produced for founders, mentors, or team members."
+    ],
+    "next_production_layers": [
+      "Replace deterministic modules with Claude/Codex prompt calls where useful.",
+      "Connect Jira through MCP or API after human approval gates are defined.",
+      "Connect GitHub workflow through GitHub API/MCP and PR templates.",
+      "Add database storage, authentication, and prompt regression tests for production."
+    ]
+  },
+  "jira_tickets": [
+    {
+      "key": "MVP-001",
+      "title": "Define restaurant FAQ MVP scope",
+      "user_story": "As a founder, I want to define restaurant faq mvp scope so that I can move from messy feedback to structured MVP execution.",
+      "description": "Define the first version of the assistant and the boundaries of what it should not do.",
+      "acceptance_criteria": [
+        "In-scope and out-of-scope features are documented",
+        "Success criteria are approved",
+        "Risky automation boundaries are listed"
+      ],
+      "priority": "High",
+      "definition_of_done": [
+        "Code or documentation completed",
+        "Relevant tests or evaluation checks pass",
+        "Output reviewed for founder usefulness",
+        "Summary added to Jira/PR notes"
+      ],
+      "suggested_branch": "feature/mvp-001-define-restaurant-faq-mvp-scope"
+    },
+    {
+      "key": "MVP-002",
+      "title": "Build founder notes input workflow",
+      "user_story": "As a founder, I want to build founder notes input workflow so that I can move from messy feedback to structured MVP execution.",
+      "description": "Allow founders or restaurant owners to paste messy notes or business information for analysis.",
+      "acceptance_criteria": [
+        "Text input is accepted",
+        "Empty input is handled",
+        "Long input is handled",
+        "Input is passed into the workflow"
+      ],
+      "priority": "High",
+      "definition_of_done": [
+        "Code or documentation completed",
+        "Relevant tests or evaluation checks pass",
+        "Output reviewed for founder usefulness",
+        "Summary added to Jira/PR notes"
+      ],
+      "suggested_branch": "feature/mvp-002-build-founder-notes-input-workflow"
+    },
+    {
+      "key": "MVP-003",
+      "title": "Generate MVP analysis output",
+      "user_story": "As a founder, I want to generate mvp analysis output so that I can move from messy feedback to structured MVP execution.",
+      "description": "Extract the problem, target user, pain points, risks, assumptions, and recommended MVP.",
+      "acceptance_criteria": [
+        "Problem is identified",
+        "Target user is identified",
+        "Pain points are listed",
+        "Risks and assumptions are included"
+      ],
+      "priority": "High",
+      "definition_of_done": [
+        "Code or documentation completed",
+        "Relevant tests or evaluation checks pass",
+        "Output reviewed for founder usefulness",
+        "Summary added to Jira/PR notes"
+      ],
+      "suggested_branch": "feature/mvp-003-generate-mvp-analysis-output"
+    },
+    {
+      "key": "MVP-004",
+      "title": "Generate Jira-style execution tickets",
+      "user_story": "As a founder, I want to generate jira-style execution tickets so that I can move from messy feedback to structured MVP execution.",
+      "description": "Convert the MVP plan into clear user stories and acceptance criteria.",
+      "acceptance_criteria": [
+        "At least five tickets are created",
+        "Each ticket has acceptance criteria",
+        "Each ticket has definition of done",
+        "Suggested branch names are included"
+      ],
+      "priority": "High",
+      "definition_of_done": [
+        "Code or documentation completed",
+        "Relevant tests or evaluation checks pass",
+        "Output reviewed for founder usefulness",
+        "Summary added to Jira/PR notes"
+      ],
+      "suggested_branch": "feature/mvp-004-generate-jira-style-execution-tickets"
+    },
+    {
+      "key": "MVP-005",
+      "title": "Add evaluation metrics",
+      "user_story": "As a founder, I want to add evaluation metrics so that I can move from messy feedback to structured MVP execution.",
+      "description": "Evaluate content quality, domain fit, and system reliability.",
+      "acceptance_criteria": [
+        "Content quality score is generated",
+        "Domain-fit score is generated",
+        "System reliability score is generated",
+        "Overall score and recommendation are included"
+      ],
+      "priority": "High",
+      "definition_of_done": [
+        "Code or documentation completed",
+        "Relevant tests or evaluation checks pass",
+        "Output reviewed for founder usefulness",
+        "Summary added to Jira/PR notes"
+      ],
+      "suggested_branch": "feature/mvp-005-add-evaluation-metrics"
+    },
+    {
+      "key": "MVP-006",
+      "title": "Create final founder summary",
+      "user_story": "As a founder, I want to create final founder summary so that I can move from messy feedback to structured MVP execution.",
+      "description": "Generate a concise delivery summary that can be shared with team members, mentors, or investors.",
+      "acceptance_criteria": [
+        "Problem is summarized",
+        "MVP is summarized",
+        "Evaluation result is included",
+        "Limitations and next steps are included"
+      ],
+      "priority": "Medium",
+      "definition_of_done": [
+        "Code or documentation completed",
+        "Relevant tests or evaluation checks pass",
+        "Output reviewed for founder usefulness",
+        "Summary added to Jira/PR notes"
+      ],
+      "suggested_branch": "feature/mvp-006-create-final-founder-summary"
+    }
+  ],
+  "evaluation": {
+    "content_quality": [
+      {
+        "name": "Problem Accuracy",
+        "score": 5.0,
+        "max_score": 5.0,
+        "notes": "The main operational problem is clearly identified."
+      },
+      {
+        "name": "Target User Accuracy",
+        "score": 5.0,
+        "max_score": 5.0,
+        "notes": "The target user is specific and founder-friendly."
+      },
+      {
+        "name": "Pain Point Coverage",
+        "score": 4.5,
+        "max_score": 5.0,
+        "notes": "Major repeated-question, scattered-channel, and time-waste pains are captured."
+      },
+      {
+        "name": "MVP Scope Quality",
+        "score": 4.5,
+        "max_score": 5.0,
+        "notes": "The MVP is small, useful, and avoids full CRM/POS overbuild."
+      },
+      {
+        "name": "Jira Ticket Actionability",
+        "score": 4.5,
+        "max_score": 5.0,
+        "notes": "Tickets include user stories, acceptance criteria, priority, and branch guidance."
+      },
+      {
+        "name": "Final Summary Quality",
+        "score": 4.5,
+        "max_score": 5.0,
+        "notes": "Summary is clear enough for a mentor, team member, or founder update."
+      }
+    ],
+    "domain_fit": [
+      {
+        "name": "Domain Relevance",
+        "score": 5.0,
+        "max_score": 5.0,
+        "notes": "The workflow fits small restaurant owner operations."
+      },
+      {
+        "name": "Allergy/Menu Risk Handling",
+        "score": 5.0,
+        "max_score": 5.0,
+        "notes": "Allergy and missing menu information are flagged for owner review."
+      },
+      {
+        "name": "Missing Information Handling",
+        "score": 4.5,
+        "max_score": 5.0,
+        "notes": "The design avoids guessing when details are unavailable."
+      },
+      {
+        "name": "Human Review Fit",
+        "score": 5.0,
+        "max_score": 5.0,
+        "notes": "Owner approval is required before risky customer-facing use."
+      },
+      {
+        "name": "Practical Usefulness",
+        "score": 4.5,
+        "max_score": 5.0,
+        "notes": "The MVP would help reduce repeated manual responses."
+      }
+    ],
+    "system_reliability": [
+      {
+        "name": "Required Field Completeness",
+        "score": 5.0,
+        "max_score": 5.0,
+        "notes": "Core sections are generated: requirements, scope, architecture, tickets, evaluation, summary."
+      },
+      {
+        "name": "JSON/API Structure",
+        "score": 5.0,
+        "max_score": 5.0,
+        "notes": "The API uses typed Pydantic models and predictable output structure."
+      },
+      {
+        "name": "Test Pass Readiness",
+        "score": 5.0,
+        "max_score": 5.0,
+        "notes": "The reference workflow is covered by pytest checks."
+      },
+      {
+        "name": "Edge Case Handling",
+        "score": 4.0,
+        "max_score": 5.0,
+        "notes": "Short notes and regulated-domain cues are handled with assumptions/risks."
+      },
+      {
+        "name": "Production Readiness",
+        "score": 3.5,
+        "max_score": 5.0,
+        "notes": "This is a workshop reference system; production needs live LLM, Jira/GitHub, auth, storage, and monitoring."
+      }
+    ],
+    "overall_score": 4.66,
+    "recommendation": "Workshop-ready. Use as a deterministic reference system, then add live Claude/Codex, Jira, GitHub, and MCP integrations as the advanced layer."
+  },
+  "final_summary": "# MVPFlow AI Delivery Summary\n\n## Problem\nRestaurant owners spend too much time answering repeated customer questions across scattered channels.\n\n## Target User\nSmall restaurant owners and managers who handle customer questions manually.\n\n## Recommended MVP\nA human-reviewed AI FAQ assistant for restaurant owners.\n\n## MVP Scope\n- Paste or upload restaurant information.\n- Generate editable FAQ answers from the restaurant information.\n- Answer sample customer questions in a test console.\n- Flag risky allergy, dietary, or missing-information questions for owner review.\n- Create evaluation test cases for common and risky questions.\n\n## Key Risks\n- Allergy or dietary answers may be risky if menu information is incomplete.\n- Outdated menu, delivery, or reservation information could mislead customers.\n- Fully automated replies should not be enabled before owner review.\n\n## Architecture Pattern\nHuman-in-the-loop AI workflow MVP\n\n## Jira Backlog\n- MVP-001: Define restaurant FAQ MVP scope\n- MVP-002: Build founder notes input workflow\n- MVP-003: Generate MVP analysis output\n- MVP-004: Generate Jira-style execution tickets\n- MVP-005: Add evaluation metrics\n- MVP-006: Create final founder summary\n\n## Evaluation Result\nOverall score: 4.66/5\n\nRecommendation: Workshop-ready. Use as a deterministic reference system, then add live Claude/Codex, Jira, GitHub, and MCP integrations as the advanced layer.\n\n## Next Steps\n1. Review generated tickets with the founder/team.\n2. Select the first implementation ticket.\n3. Build through a GitHub branch and PR.\n4. Run tests and domain-specific evaluation.\n5. Update the final summary after each milestone."
+}

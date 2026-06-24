@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: mvpflow-postgres
+    environment:
+      POSTGRES_USER: mvpflow
+      POSTGRES_PASSWORD: mvpflow-dev-password
+      POSTGRES_DB: mvpflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mvpflow"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - mvpflow_network
+
+  # Redis Cache (optional, for caching and rate limiting)
+  redis:
+    image: redis:7-alpine
+    container_name: mvpflow-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - mvpflow_network
+
+  # MVPFlow AI Application
+  mvpflow:
+    build: .
+    container_name: mvpflow-app
+    environment:
+      APP_ENV: development
+      DATABASE_URL: postgresql://mvpflow:mvpflow-dev-password@postgres:5432/mvpflow
+      DEBUG: "true"
+      LOG_LEVEL: DEBUG
+      ENABLE_JWT_AUTH: "false"
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - mvpflow_network
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # Development tools container
+  dev-tools:
+    image: python:3.12-slim
+    container_name: mvpflow-dev-tools
+    working_dir: /app
+    volumes:
+      - .:/app
+    networks:
+      - mvpflow_network
+    command: tail -f /dev/null  # Keep container running
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  mvpflow_network:
+    driver: bridge

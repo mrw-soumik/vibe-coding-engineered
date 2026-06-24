@@ -1,0 +1,11 @@
+Replace everything in this file with your own messy notes, then run the command in workshop/LAB.md.
+
+Tip: a few lines about a real problem - who has it, what is painful, what they do today, and one thing that is NOT needed yet. Messy is fine; better input means a better plan.
+
+--- sample (delete this and write your own) ---
+We spoke with about a dozen freelance graphic designers. They lose time every week
+on back-and-forth over project scope and revisions, on chasing invoices, and on
+digging through email and DMs to find the latest client feedback. New leads from
+Instagram often go cold because follow-up is manual and slow. They want to look
+professional and spend less time on admin, without learning a heavy project-management
+tool. Not trying to build payments or a full CRM in version one.

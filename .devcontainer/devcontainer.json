@@ -1,0 +1,13 @@
+{
+  "name": "MVPFlow AI Workshop",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "pip install -r mvpflow-ai/requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "GitHub.copilot"]
+    }
+  }
+}

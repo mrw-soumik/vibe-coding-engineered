@@ -1,0 +1,11 @@
+# Treat binary assets as binary so Git never applies text/line-ending (CRLF)
+# conversion, which would corrupt them on checkout (especially on Windows with
+# core.autocrlf=true).
+*.pptx binary
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.zip  binary

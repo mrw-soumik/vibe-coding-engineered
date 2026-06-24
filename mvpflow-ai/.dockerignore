@@ -1,0 +1,18 @@
+# Keep secrets, local state, and dev cruft out of the image (and build context).
+.env
+.env.*
+*.db
+*.sqlite*
+logs/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.git/
+.github/
+venv/
+.venv/
+tests/
+docs/
+eval/
+*.md

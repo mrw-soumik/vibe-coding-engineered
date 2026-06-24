@@ -1,0 +1,7 @@
+We spoke with 6 restaurant owners. They said they spend a lot of time answering repeated customer questions about opening hours, menu items, allergies, reservations, delivery options, and group bookings.
+
+Most questions come through Instagram DMs, phone calls, Google reviews, and sometimes Facebook. They do not want a complicated CRM or full POS system. They want something simple that helps answer common questions and organize customer requests.
+
+They are worried about wrong allergy information, outdated menu details, and the assistant giving answers without owner approval. They want to review important answers before using it with customers.
+
+The first version should be simple. It should let the owner paste restaurant information, generate common FAQ answers, test the assistant with sample customer questions, and flag risky cases for owner review.

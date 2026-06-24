@@ -1,0 +1,34 @@
+[
+  {
+    "name": "restaurant_faq",
+    "domain": "restaurant",
+    "notes": "We spoke with 6 restaurant owners. They spend hours answering repeated questions about opening hours, menu items, allergies, reservations, and delivery across Instagram, phone, and Google reviews. They want something simple, not a full CRM.",
+    "checks": {
+      "min_tickets": 5,
+      "all_tickets_min_acceptance": 3,
+      "tickets_have_story_points": true,
+      "risks_include": "allerg",
+      "summary_includes": "## MVP Scope"
+    }
+  },
+  {
+    "name": "healthcare_intake_privacy",
+    "domain": "healthcare",
+    "notes": "A small clinic wants to turn messy patient intake notes and follow-up messages into a triage workflow. Staff handle protected health data and must never give medical advice automatically; urgent cases need flagging.",
+    "checks": {
+      "min_tickets": 5,
+      "recommended_mvp_nonempty": true,
+      "risks_include": "privac"
+    }
+  },
+  {
+    "name": "saas_support_backlog",
+    "domain": "saas",
+    "notes": "Our SaaS support team gets repeated tickets that should become product backlog items. We want to convert support themes into a prioritized backlog without overbuilding.",
+    "checks": {
+      "min_tickets": 5,
+      "recommended_mvp_nonempty": true,
+      "summary_includes": "## Next Steps"
+    }
+  }
+]

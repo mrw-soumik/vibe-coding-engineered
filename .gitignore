@@ -1,0 +1,40 @@
+# OS / editor
+.DS_Store
+*.swp
+~$*
+
+# Local Claude Code settings (personal, not shared)
+.claude/settings.local.json
+
+# Secrets & environment
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Databases & logs
+*.db
+*.sqlite
+*.sqlite3
+mvpflow*.db
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+venv/
+.venv/
+env/
+
+# Redundant packaged snapshot of the codebase (kept out of version control)
+MVPFlow_AI_Codebase_v5.zip
